@@ -1,0 +1,148 @@
+<app-sidebar-conttout></app-sidebar-conttout>
+<app-navbar-conttout></app-navbar-conttout>
+
+<div class="contenu">
+  <main>
+    <div class="boutPLace">
+
+      <button  class="btn btn-primary"  (click)="afficherRendezVousEnAttente()">Rendez-vous en attente</button>
+      <button  class="btn btn-success"  (click)="afficherRendezVousAcceptes()">Rendez-vous acceptés</button>
+      <button  class="btn btn-warning"  (click)="afficherRendezVousRefuses()">Rendez-vous refusés</button>
+    </div>
+
+    <!-- <h1>Liste des Rendez-vous</h1> -->
+    <div *ngIf="rendezVousEnAttenteVisible">
+      <div *ngIf="rendezVousEnAttente.length > 0; else noRendezVousEnAttente">
+        <h2>Rendez-vous en attente</h2>
+        <div *ngFor="let consultation of rendezVousEnAttente" class="rdv-item">
+          <h3>Nom du patient: {{ consultation.user.nom }}</h3>
+          <p>Date du rendez-vous: {{ consultation.created_at }}</p>
+          <p>Heure du rendez-vous: {{ consultation.heure }}</p>
+          <button (click)="openModal(consultation)" class="btn btn-primary">Détails</button>
+          <button (click)="acceptRendezVous(consultation.id)" class="btn btn-success">Accepter</button>
+          <button (click)="refuseRendezVous(consultation.id)" class="btn btn-danger">Refuser</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <ng-template #noRendezVousEnAttente>
+      <p>Aucun rendez-vous en attente pour le moment.</p>
+    </ng-template> -->
+
+    <div class="modal" tabindex="-1" role="dialog" [class.show]="isModalOpen">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Détails du rendez-vous</h5>
+            <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Affichez les détails du rendez-vous sélectionné ici -->
+            <h3>Nom du patient: {{ selectedRendezVous?.user.nom }}</h3>
+            <p>Date du rendez-vous: {{ selectedRendezVous?.created_at }}</p>
+            <p>Heure du rendez-vous: {{ selectedRendezVous?.heure }}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeModal()">Fermer</button>
+            <!-- Ajoutez d'autres boutons au besoin -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div *ngIf="rendezVousAcceptesVisible">
+
+    <div *ngIf="rendezVousAcceptes.length > 0; else noRendezVousAcceptes">
+      <h2>Rendez-vous acceptés</h2>
+      <div *ngFor="let consultation of rendezVousAcceptes" class="rdv-item">
+        <h3>Nom du patient: {{ consultation.user.nom }}</h3>
+        <p>Date du rendez-vous: {{ consultation.created_at }}</p>
+        <p>Heure du rendez-vous: {{ consultation.heure }}</p>
+        <button (click)="showDetails(consultation.id)">Détails</button>
+        <!-- Vous pouvez ajouter des fonctionnalités supplémentaires pour les rendez-vous acceptés ici -->
+      </div>
+    </div>
+  </div>
+  <div *ngIf="rendezVousRefusesVisible">
+  <!-- Affichage des rendez-vous refusés -->
+  <div *ngIf="rendezVousRefuses.length > 0; else noRendezVousRefuses">
+    <h2>Rendez-vous refusés</h2>
+    <div *ngFor="let consultation of rendezVousRefuses" class="rdv-item">
+      <h3>Nom du patient: {{ consultation.user.nom }}</h3>
+      <p>Date du rendez-vous: {{ consultation.created_at }}</p>
+      <p>Heure du rendez-vous: {{ consultation.heure }}</p>
+      <button (click)="showDetails(consultation.id)">Détails</button>
+      <!-- Vous pouvez ajouter des fonctionnalités supplémentaires pour les rendez-vous refusés ici -->
+    </div>
+  </div>
+</div>
+
+
+    <ng-template #noRendezVousEnAttente>
+      <p>Aucun rendez-vous en attente pour le moment.</p>
+    </ng-template>
+
+    <ng-template #noRendezVousAcceptes>
+      <p>Aucun rendez-vous accepté pour le moment.</p>
+    </ng-template>
+
+    <ng-template #noRendezVousRefuses>
+      <p>Aucun rendez-vous refusé pour le moment.</p>
+    </ng-template>
+  </main>
+</div>
+
+
+
+
+<!-- <div *ngIf="rendezVousEnAttenteVisible">
+  <!-- Affichage des rendez-vous en attente -->
+<!-- </div> -->
+
+
+
+
+
+
+<!-- <app-sidebar-conttout></app-sidebar-conttout>
+<app-navbar-conttout></app-navbar-conttout>
+<div class="contenu">
+
+<main>
+
+  <h1>Liste des Rendez-vous</h1>
+
+  <div *ngIf="rendezVousList.length > 0; else noRendezVous"> -->
+    <!-- <div *ngFor="let rendezVous of rendezVousList" class="rdv-item">
+      <h2>Nom du patient: {{ rendezVous.patientName }}</h2>
+      <p>Date du rendez-vous: {{ rendezVous.date }}</p>
+      <p>Heure du rendez-vous: {{ rendezVous.heure }}</p>
+      <button (click)="showDetails(rendezVous.id)">Détails</button>
+      <button (click)="acceptRendezVous(rendezVous.id)">Accepter</button>
+      <button (click)="refuseRendezVous(rendezVous.id)">Refuser</button>
+    </div> -->
+    <!-- <div *ngFor="let consultations of rendezVousList" class="rdv-item">
+      <h2>Nom du patient: {{ consultations.user.nom }}</h2>
+      <p>Date du rendez-vous: {{ consultations.created_at }}</p>
+      <p>Heure du rendez-vous: {{ consultations.heure }}</p>
+      <button (click)="showDetails(consultations.id)">Détails</button>
+      <button (click)="acceptRendezVous(consultations.id)">Accepter</button>
+      <button (click)="refuseRendezVous(consultations.id)">Refuser</button>
+    </div>
+
+  </div> -->
+  <!-- <div *ngIf="listeRendezVous">
+    <ul>
+      <li *ngFor="let rendezVous of listeRendezVous">
+        {{ rendezVous.date }} - {{ rendezVous.heure }}
+      </li>
+    </ul>
+  </div> -->
+
+  <!-- <ng-template #noRendezVous>
+    <p>Aucun rendez-vous pour le moment.</p>
+  </ng-template>
+</main>
+</div> -->

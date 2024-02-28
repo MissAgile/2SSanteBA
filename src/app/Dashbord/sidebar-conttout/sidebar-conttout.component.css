@@ -1,0 +1,150 @@
+/* a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+ */
+
+/* SIDEBAR */
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100%;
+	/* background-color:#CE0033; */
+	z-index: 2000;
+	font-family: var(--lato);
+	transition: .3s ease;
+	overflow-x: hidden;
+	scrollbar-width: none;
+}
+.patient-bg {
+  background-color: #ffffff;
+  color: black;/* Couleur de fond pour les patients */
+  border-right:1px black solid;
+}
+
+/* Styles spécifiques pour les médecins */
+.medecin-bg {
+  background-color:#CE0033;; /* Couleur de fond pour les médecins */
+}
+
+/* Styles spécifiques pour les administrateurs */
+.admin-bg {
+  background-color:#CE0033; /* Couleur de fond pour les administrateurs */
+}
+#sidebar::--webkit-scrollbar {
+	display: none;
+}
+#sidebar.hide {
+	width: 60px;
+}
+
+#sidebar .side-menu {
+	width: 90%;
+	margin-top: 48px;
+}
+#sidebar .side-menu li {
+	height: 48px;
+	background: transparent;
+	margin-left: 6px;
+	border-radius: 48px 0 0 48px;
+	padding: 4px;
+}
+#sidebar .side-menu li.active {
+	/* background: var(--grey); */
+	position: relative;
+  color: white;
+}
+#sidebar .side-menu li.active::before {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	top: -40px;
+	right: 0;
+	box-shadow: 20px 20px 0 var(--grey);
+	z-index: -1;
+}
+#sidebar .side-menu li.active::after {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	bottom: -40px;
+	right: 0;
+	box-shadow: 20px -20px 0 var(--grey);
+	z-index: -1;
+}
+#sidebar .side-menu li a {
+	width: 100%;
+	height: 100%;
+	/* background: var(--light); */
+	display: flex;
+	align-items: center;
+	border-radius: 48px;
+	font-size: 16px;
+	color: white;
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+#sidebar A.side-menu.top li.active a {
+	color: var(--blue);
+}
+#sidebar.hide .side-menu li a {
+	width: calc(48px - (4px * 2));
+	transition: width .3s ease;
+}
+#sidebar .side-menu li a.logout {
+	color: var(--red);
+}
+#sidebar .side-menu.top li a:hover {
+	color: var(--blue);
+}
+#sidebar .side-menu li a .bx {
+	min-width: calc(60px  - ((4px + 6px) * 2));
+	display: flex;
+	justify-content: center;
+}
+.profilecon{
+  border-radius: 50%;
+  margin-top: 3vh;
+  width: 25vh;
+}
+.profileconPatient{
+  /* border-radius: 50%; */
+  margin-top: 3vh;
+  width: 25vh;
+}
+/* Pour les écrans de taille moyenne et plus grands */
+@media screen and (min-width: 768px) {
+  #sidebar {
+    width: 20%; /* Taille originale de la barre latérale */
+  }
+
+  #sidebar .side-menu {
+    width: 100%;
+  }
+}
+
+/* Pour les écrans plus petits */
+@media screen and (max-width: 767px) {
+  #sidebar {
+    width: 100px; /* Taille réduite de la barre latérale pour les petits écrans */
+  }
+  #sidebar .side-menu {
+    display: none; /* Masquer le menu latéral lorsque la barre latérale est réduite */
+  }
+}
+
+/* Pour les écrans très petits (mobiles) */
+@media screen and (max-width: 480px) {
+  #sidebar {
+    width: 100px; /* Barre latérale prend la pleine largeur de l'écran */
+  }
+}

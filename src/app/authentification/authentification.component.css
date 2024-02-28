@@ -1,0 +1,367 @@
+.emplacement{
+  display: grid;
+  grid-template-columns: 40% 40%;
+  gap: 2vh;
+  /* box-shadow: 4px 4px 4px, -4px 4px 4px; */
+  justify-content: center;
+  border: 3px solid #ce0033;
+  margin-top: 5vh;
+
+}
+.emplacement1{
+  display: grid;
+  grid-template-columns:  1fr;
+  gap: 2vh;
+  box-shadow: 4px 4px 4px, -4px 4px 4px;
+  justify-content: center;
+  /* height: 110vh; */
+
+}
+.card-body{
+  justify-content: center;
+}
+
+.validationIns{
+  display: grid;
+  grid-template-columns:  45% 45%;
+  justify-content: center;
+  gap: 5vh;
+
+}
+.link{
+  cursor: pointer;
+  /* color: #ce0033; */
+  text-decoration: underline;
+}
+.link:hover{
+  color: #ce0033;
+}
+#floatingInput{
+  border: 2px solid #ce0033;
+  border-radius: 25px;
+  width: 100% !important;
+  height: 7vh;
+  padding-left: 15px;
+  /* width: 80%; */
+  /* height: 5vh; */
+  /* width: 40vh; */
+  /* height: 7vh; */
+  /* border-radius: 20px; */
+}
+#floatingInputCon{
+  border: 2px solid #ce0033;
+  border-radius: 25px;
+  /* height: 5vh; */
+  width: 80%;
+  height: 7vh;
+  padding-left: 15px;
+  /* border-radius: 20px; */
+}
+
+#taiilleForme{
+  width: 80%;
+  border: 2px solid;
+}
+.email{
+  margin-left: 5px;
+}
+.carteForm, .compoTo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4vh;
+
+}
+.carte,.carteCon{
+  width: auto;
+  height: 80%;
+}
+/* .carteCon{
+  width: 100vh;
+  height: 100vh;
+} */
+.formulaire{
+  box-shadow: 4px 4px 4px;
+  /* box-shadow: 4px 4px 4px, -4px 4px 4px; */
+  height: 60vh;
+  width: 85%;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* justify-content: center; */
+
+}
+.subscription, .lienInscriptionU{
+  background-color: #ffffff !important;
+  border: 2px solid #ce0033;
+  width: 30vh;
+  height: 7vh;
+  border-radius: 25px;
+
+}
+.titreForm{
+  margin-top: 10h;
+  justify-content: center;
+}
+.lienInscription{
+  font-size: 30px;
+  font-weight: bold;
+  color: #ce0033;
+  width: 100%;
+  text-decoration: underline;
+}
+/* .lienInscriptionU{
+  font-size: 30px;
+  font-weight: bold;
+  color: #ce0033;
+  width: 100%;
+  text-decoration: underline;
+} */
+/* Media queries pour la responsivité */
+
+@media screen and (max-width: 1200px) {
+  /* .emplacement{
+    grid-template-columns: 100%;
+  } */
+  .carteForm , .compoTo{
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: center;
+    /* gap: 4vh; */
+
+  }
+  .formulaire{
+    width: 80%;
+  }
+
+  .formulaire{
+    /* box-shadow: 4px 4px 4px, -4px 4px 4px; */
+    height: 70vh;
+    width: auto !important;
+    border-radius: 20px;
+
+  }
+  #floatingInput{
+    border: 2px solid #ce0033;
+    border-radius: 25px;
+    /* height: 5vh; */
+    width: auto;
+    height: 7vh;
+    /* border-radius: 20px; */
+  }
+  .validationIns{
+    display: grid;
+    grid-template-columns:  45% 45%;
+    justify-content: center;
+    gap: 5vh;
+
+  }
+  /* .emplacement{
+    display: grid;
+    grid-template-columns: 60%;
+    gap: 2vh;
+  } */
+  /* .subscription{
+    background-color: #ffffff !important;
+    border: 2px solid #ce0033;
+    width: 30vh;
+    height: 9vh;
+    border-radius: 25px;
+
+  } */
+  .lienInscription{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ce0033;
+    /* width: 100%; */
+    text-decoration: underline;
+  }
+
+  /* Ajoutez d'autres ajustements responsifs ici */
+}
+@media screen and (max-width: 768px) {
+  /* .emplacement{
+    grid-template-columns: 100%;
+  } */
+  .carteForm , .compoTo{
+    display: grid;
+    grid-template-columns: 75%;
+    /* gap: 4vh; */
+
+  }
+  .formulaire{
+    width: 80%;
+  }
+  .validationIns{
+    display: grid;
+    grid-template-columns:  60%;
+    justify-content: center;
+    gap: 5vh;
+
+  }
+  .formulaire{
+    /* box-shadow: 4px 4px 4px, -4px 4px 4px; */
+    height: 70vh;
+    width: auto !important;
+    border-radius: 20px;
+
+  }
+  #floatingInput{
+    border: 2px solid #ce0033;
+    border-radius: 25px;
+    /* height: 5vh; */
+    width: auto;
+    height: 7vh;
+    /* border-radius: 20px; */
+  }
+  .emplacement{
+    display: grid;
+    grid-template-columns: 60%;
+    gap: 2vh;
+  }
+  /* .subscription{
+    background-color: #ffffff !important;
+    border: 2px solid #ce0033;
+    width: 30vh;
+    height: 9vh;
+    border-radius: 25px;
+
+  } */
+  .lienInscription{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ce0033;
+    /* width: 100%; */
+    text-decoration: underline;
+  }
+
+  /* Ajoutez d'autres ajustements responsifs ici */
+}
+@media screen and (max-width: 528px) {
+  /* .emplacement{
+    grid-template-columns: 100%;
+  /* } *
+  .carteForm , .compoTo{
+    display: grid;
+    grid-template-columns: 75%;
+    /* gap: 4vh; *
+
+  } */
+  /* .formulaire{
+    width: 80%;
+  } */
+
+  /* .formulaire{
+    /* box-shadow: 4px 4px 4px, -4px 4px 4px; *
+    height: 70vh;
+    width: auto !important;
+    border-radius: 20px;
+
+  } */
+  /* #floatingInput{
+    border: 2px solid #ce0033;
+    border-radius: 25px;
+    /* height: 5vh;
+    width: auto;
+    height: 7vh;
+    /* border-radius: 20px; *
+  } */
+  /* .emplacement{
+    display: grid;
+    grid-template-columns: 60%;
+    gap: 2vh;
+  } */
+  /* .subscription{
+    background-color: #ffffff !important;
+    border: 2px solid #ce0033;
+    width: 30vh;
+    height: 9vh;
+    border-radius: 25px;
+
+  } */
+  .lienInscription{
+    font-size: 15px;
+    font-weight: bold;
+    color: #ce0033;
+    /* width: 100%; */
+    text-decoration: underline;
+  }
+
+  /* Ajoutez d'autres ajustements responsifs ici */
+}
+
+@media screen and (max-width: 580px) {
+  /* Ajoutez des ajustements pour les écrans plus petits */
+  /* .lienInscription{
+    font-size: 10px;
+    font-weight: bold;
+    color: #ce0033; */
+    /* width: 100%; */
+    /* text-decoration: underline;
+  }
+  .emplacement{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    gap: 2vh;
+    box-shadow: 4px 4px 4px, -4px 4px 4px;
+    justify-content: center;
+
+  }
+
+  .link{
+    cursor: pointer;
+    /* color: #ce0033; *
+    text-decoration: underline;
+  }
+  .link:hover{
+    color: #ce0033;
+  }
+  #floatingInput{
+    border: 2px solid #ce0033;
+    border-radius: 25px;
+    /* height: 5vh; */
+    /* width: 40vh; */
+    /* height: 7vh; *
+    /* border-radius: 20px; *
+  }
+
+  #taiilleForme{
+    width: 80%;
+    border: 2px solid;
+  }
+
+  .carteForm, .compoTo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vh;
+
+  }
+  .carte{
+    width: auto;
+    height: 100%;
+  }
+  .formulaire{
+    box-shadow: 4px 4px 4px, -4px 4px 4px;
+    height: 50vh;
+    /* width: 90vh; *
+    border-radius: 20px;
+
+  }
+  .subscription, .lienInscriptionU{
+    background-color: #ffffff !important;
+    border: 2px solid #ce0033;
+    width: 30vh;
+    height: 7vh;
+    border-radius: 25px;
+
+  }
+  .titreForm{
+    margin-top: 10h;
+  }
+  .lienInscription{
+    font-size: 30px;
+    font-weight: bold;
+    color: #ce0033;
+    width: 100%;
+    text-decoration: underline;
+  } */
+}

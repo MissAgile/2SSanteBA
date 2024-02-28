@@ -1,0 +1,248 @@
+<app-header></app-header>
+<div class=" contenuListeMedecin">
+  <div class="banier" >
+    <img src="../../assets/banierMedinBon.png" alt="" id="banier">
+  </div>
+  <div class="mt-5">
+    <h1 class="text-center"><u>Liste des médecins</u></h1>
+    <div class=" search-container">
+      <input type="text" class="search-input" placeholder="Recherche...">
+      <!-- <button class=""> -->
+        <i class="bi bi-search me-4" style="color: #CE0033;"></i>
+        <!-- <img src="loupe-icon.png" alt="Loupe"> -->
+      <!-- </button> -->
+    </div>
+    <div>
+      <div class="container mt-5" id="cardMedecin">
+        <div class="col" id="totalMedecin" *ngFor="let medecins of medecin">
+          <div  id="contenuTemoin"  >
+            <img src="http://127.0.0.1:8000/storage/{{ medecin.image }}" class=" mx-auto" alt="..." id="profile">
+            <div >
+              <h5 id="NomTemoins">{{ medecins.nom }}</h5>
+              <p small class="text-body-secondary">{{  medecins.secteur_activite }}</p>
+              <p small class="text-body-secondary">{{  medecins.hopital }}</p>
+              <p small class="text-body-secondary">{{  medecins.ville }}</p>
+            </div>
+            <div class="claplus ">
+              <a href="" class="btn "  id="plus" [routerLink]="['/detailMed',medecins.id]">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col" id="totalMedecin">
+          <div  id="contenuTemoin">
+            <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+            <div >
+              <h5 id="NomTemoins">Dr. YOVO</h5>
+              <p small class="text-body-secondary">Cardiologue</p>
+            </div>
+            <div class="claplus ">
+              <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+            </div>
+          </div>
+          </div>
+          <div class="col" id="totalMedecin">
+            <div  id="contenuTemoin">
+              <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+            <div >
+            <h5 id="NomTemoins">Dr. YOVO</h5>
+            <p small class="text-body-secondary">Cardiologue</p>
+          </div>
+          <div class="claplus ">
+            <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+          </div>
+        </div>
+        </div>
+        <div class="col" id="totalMedecin">
+          <div  id="contenuTemoin">
+            <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+            <div >
+              <h5 id="NomTemoins">Dr. YOVO</h5>
+              <p small class="text-body-secondary">Cardiologue</p>
+            </div>
+            <div class="claplus ">
+              <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col" id="totalMedecin">
+          <div  id="contenuTemoin">
+            <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+            <div >
+              <h5 id="NomTemoins">Dr. YOVO</h5>
+              <p small class="text-body-secondary">Cardiologue</p>
+            </div>
+            <div class="claplus ">
+              <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+            </div>
+          </div>
+          </div>
+          <div class="col" id="totalMedecin">
+            <div  id="contenuTemoin">
+              <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+            <div >
+            <h5 id="NomTemoins">Dr. YOVO</h5>
+            <p small class="text-body-secondary">Cardiologue</p>
+          </div>
+          <div class="claplus ">
+            <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+          </div>
+        </div>
+        </div>
+        <div class="col" id="totalMedecin">
+          <div  id="contenuTemoin">
+            <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+            <div >
+              <h5 id="NomTemoins">Dr. YOVO</h5>
+              <p small class="text-body-secondary">Cardiologue</p>
+            </div>
+            <div class="claplus ">
+              <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+        <div class="col" id="totalMedecin">
+          <div  id="contenuTemoin">
+            <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+            <div >
+              <h5 id="NomTemoins">Dr. YOVO</h5>
+              <p small class="text-body-secondary">Cardiologue</p>
+            </div>
+            <div class="claplus ">
+              <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+            </div>
+          </div>
+          </div>
+          <div class="col" id="totalMedecin">
+            <div  id="contenuTemoin">
+              <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+            <div >
+            <h5 id="NomTemoins">Dr. YOVO</h5>
+            <p small class="text-body-secondary">Cardiologue</p>
+          </div>
+          <div class="claplus ">
+            <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+          </div>
+        </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<app-footer></app-footer>
+
+
+
+<!-- <div class="container mt-5" id="cardMedecin">
+  <div class="col" id="totalMedecin" *ngFor="let article of medecin">
+    <div  id="contenuTemoin">
+      <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+      <div >
+        <h5 id="NomTemoins">Dr. YOVO</h5>
+        <p small class="text-body-secondary">Cardiologue</p>
+      </div>
+      <div class="claplus ">
+        <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+  <div class="col" id="totalMedecin">
+    <div  id="contenuTemoin">
+      <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+      <div >
+        <h5 id="NomTemoins">Dr. YOVO</h5>
+        <p small class="text-body-secondary">Cardiologue</p>
+      </div>
+      <div class="claplus ">
+        <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+      </div>
+    </div>
+    </div>
+    <div class="col" id="totalMedecin">
+      <div  id="contenuTemoin">
+        <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+      <div >
+      <h5 id="NomTemoins">Dr. YOVO</h5>
+      <p small class="text-body-secondary">Cardiologue</p>
+    </div>
+    <div class="claplus ">
+      <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+    </div>
+  </div>
+  </div>
+  <div class="col" id="totalMedecin">
+    <div  id="contenuTemoin">
+      <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+      <div >
+        <h5 id="NomTemoins">Dr. YOVO</h5>
+        <p small class="text-body-secondary">Cardiologue</p>
+      </div>
+      <div class="claplus ">
+        <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+  <div class="col" id="totalMedecin">
+    <div  id="contenuTemoin">
+      <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+      <div >
+        <h5 id="NomTemoins">Dr. YOVO</h5>
+        <p small class="text-body-secondary">Cardiologue</p>
+      </div>
+      <div class="claplus ">
+        <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+      </div>
+    </div>
+    </div>
+    <div class="col" id="totalMedecin">
+      <div  id="contenuTemoin">
+        <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+      <div >
+      <h5 id="NomTemoins">Dr. YOVO</h5>
+      <p small class="text-body-secondary">Cardiologue</p>
+    </div>
+    <div class="claplus ">
+      <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+    </div>
+  </div>
+  </div>
+  <div class="col" id="totalMedecin">
+    <div  id="contenuTemoin">
+      <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+      <div >
+        <h5 id="NomTemoins">Dr. YOVO</h5>
+        <p small class="text-body-secondary">Cardiologue</p>
+      </div>
+      <div class="claplus ">
+        <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+  <div class="col" id="totalMedecin">
+    <div  id="contenuTemoin">
+      <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+      <div >
+        <h5 id="NomTemoins">Dr. YOVO</h5>
+        <p small class="text-body-secondary">Cardiologue</p>
+      </div>
+      <div class="claplus ">
+        <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+      </div>
+    </div>
+    </div>
+    <div class="col" id="totalMedecin">
+      <div  id="contenuTemoin">
+        <img src="../../assets/medecin1.png" class=" mx-auto" alt="..." id="profile">
+      <div >
+      <h5 id="NomTemoins">Dr. YOVO</h5>
+      <p small class="text-body-secondary">Cardiologue</p>
+    </div>
+    <div class="claplus ">
+      <a href="" class="btn "  id="plus" [routerLink]="['/detailMed']">En savoir plus</a>
+    </div>
+  </div>
+  </div>
+</div> -->

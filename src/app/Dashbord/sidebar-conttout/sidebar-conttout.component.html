@@ -1,0 +1,130 @@
+<section class="sidebar" id="sidebar" [ngClass]="{'patient-bg': isPatient, 'medecin-bg': isMedecin, 'admin-bg': isAdmin}">
+  <!-- <div class="brand " id="brand">
+    <- <span class="text text-white"><img src="assets/dashboard/logofooter.png" alt=""></span> -->
+    <!-- <div class="ms-3"> -->
+      <!-- <p class="mt-3" style="font-size: 16px;">Gorgui Amadem FALL</p> -->
+      <!-- <p style="font-size: 14px;">en ligne</p> -->
+
+    <!-- </div> -->
+  <!-- </div> -->
+  <div *ngIf="isAdmin ||isMedecin">
+    <img src="http://127.0.0.1:8000/storage/{{userConnecte.image }}" class="card-img-top" alt="..." id="imagecard">
+
+    <!-- <img src="../../../assets/profilAdminbon.png" alt="" class=" ms-5 profilecon"> -->
+  </div>
+  <div *ngIf="isPatient">
+    <img src="../../../assets/logo certification.png" alt="" class=" ms-5 profileconPatient">
+  </div>
+  <ul class="side-menu top" *ngIf="isAdmin">
+    <li class="active">
+      <a style="cursor: pointer;">
+        <i class='bx bxs-dashboard' [routerLink]="['/dashboardAdmin']"></i>
+        <span class="text-white" [routerLink]="['/dashboardAdmin']">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a style="cursor: pointer;">
+        <i class='bx bxs-shopping-bag-alt' [routerLink]="['/gestion-contenu']"></i>
+        <span class="text" [routerLink]="['/gestion-contenu']">Gestion contenu</span>
+      </a>
+    </li>
+    <li>
+      <a style="cursor: pointer;" >
+        <i class='bx bxs-doughnut-chart' [routerLink]="['/gestion-user']"></i>
+        <span class="text" [routerLink]="['/gestion-user']">Gestion utilisateurs</span>
+      </a>
+    </li>
+    <li>
+      <a style="cursor: pointer;">
+        <i class='bx bxs-message-dots' [routerLink]="['/gestion-role']"></i>
+        <span class="text" [routerLink]="['/gestion-role']">Gestion Role</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu top" *ngIf="isMedecin">
+    <li class="actdasbordMedive">
+      <a style="cursor: pointer;">
+        <i class='bx bxs-dashboard' [routerLink]="['/dashboardMed']"></i>
+        <span class="text-white" [routerLink]="['/dashboardMed']">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a style="cursor: pointer;">
+        <i class='bx bxs-shopping-bag-alt' [routerLink]="['/gestion-article']"></i>
+        <span class="text" [routerLink]="['/gestion-article']">Gestion Articles</span>
+      </a>
+    </li>
+    <li>
+      <a style="cursor: pointer;">
+        <i class='bx bxs-doughnut-chart' [routerLink]="['/planning']"></i>
+        <span class="text" [routerLink]="['/planning']">Gestion planning</span>
+      </a>
+    </li>
+    <!-- <li>
+      <a style="cursor: pointer;">
+        <i class='bx bxs-doughnut-chart' [routerLink]="['/gestion-patient']"></i>
+        <span class="text" [routerLink]="['/gestion-patient']">liste Patients</span>
+      </a>
+    </li> -->
+    <li>
+      <a style="cursor: pointer;">
+        <i class='bx bxs-message-dots' [routerLink]="['/consultation']"></i>
+        <span class="text" [routerLink]="['/consultation']">Liste Consultation</span>
+      </a>
+    </li>
+    <li>
+      <a style="cursor: pointer;">
+        <i class='bx bxs-message-dots' [routerLink]="['/rendezVousAttente']"></i>
+        <span class="text" [routerLink]="['/rendezVousAttente']">Liste RDV en attentes</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu top" *ngIf="isPatient">
+    <li class="active">
+      <a style="cursor: pointer;">
+        <i class='bx bxs-dashboard' [routerLink]="['/dashboardPatient']"></i>
+        <span class="text-black" [routerLink]="['/dashboardPatient']">Dashboard</span>
+      </a>
+    </li>
+    <li class="active">
+      <a style="cursor: pointer;">
+        <i class='bx bxs-dashboard' [routerLink]="['/consultationPatient']"></i>
+        <span class="text-black" [routerLink]="['/consultationPatient']">Prendre un rendez-vous</span>
+      </a>
+    </li>
+    <!-- <li class="active">
+      <a style="cursor: pointer;">
+        <i class='bx bxs-dashboard' [routerLink]="['/priseConsultation']"></i>
+        <span class="text-black" [routerLink]="['/priseConsultation']">Calendrier des Plannind</span>
+      </a>
+    </li> -->
+    <li>
+      <a style="cursor: pointer;">
+        <i class='bx bxs-shopping-bag-alt' [routerLink]="['/historique']"></i>
+        <span class="text-black" [routerLink]="['/historique']">Historique des RDV</span>
+      </a>
+    </li>
+    <li>
+      <a style="cursor: pointer;">
+        <i class='bx bxs-doughnut-chart' [routerLink]="['/MesMedicin']"></i>
+        <span class="text-black" [routerLink]="['/MesMedicin']">Médecins</span>
+      </a>
+    </li>
+    <!-- <li>
+      <a >
+        <i class='bx bxs-message-dots' [routerLink]="['/gestion-profil']"></i>
+        <span class="text-black" [routerLink]="['/gestion-profil']">Gestion Role</span>
+      </a>
+    </li> -->
+  </ul>
+
+  <ul class="side-menu mt-4" *ngIf="isAdmin ||isMedecin || isPatient">
+
+    <li style="cursor: pointer;">
+      <a class="logout">
+        <i class="bi bi-person-fill"></i>
+        <span class="text-white">Profil</span>
+      </a>
+    </li>
+  </ul>
+</section>

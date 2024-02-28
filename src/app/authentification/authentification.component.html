@@ -1,0 +1,200 @@
+<app-header></app-header>
+<!-- inscription -->
+<div class="container titreForm texte-center" *ngIf="!showConnexion">
+  <h1 class="text-center  ms-5 mt-5" style="color: #ce0033;">Inscription </h1>
+  <div class=" mb-5 "  >
+    <div class=" carteForm ">
+      <!-- <div class="col-md-6 carteForm compoTo"> -->
+      <div  class="">
+
+        <img src="../../../assets/inscription.png" class="img-fluid carteCon " alt="...">
+      </div>
+      <div class="">
+        <!-- <div class="card-body "> -->
+          <div class="dispositionContenu" >
+            <!-- <h2>Inscription</h2> -->
+            <form (ngSubmit)="inscription()" class="emplacement1 mt-5" >
+              <div  class="emplacement  container">
+                <!-- Nom -->
+                <div class="form-floating mb-3 " *ngIf="isMedecin || isPatient">
+                  <label for="floatingInput" *ngIf="!exactNom">Nom complet:</label>
+                  <input class="form-control" id="floatingInput" placeholder="Vero" type="text" [(ngModel)]="nom" name="nom" (input)="verifNomFonction()" required><br>
+                  <p class="text-danger" *ngIf="!exactNom">{{verifNom}}</p>
+                  <p class="text-success" *ngIf="exactNom"><i class="bi bi-check2-all"></i> Exact !</p>
+
+                </div>
+                <!-- Email -->
+                <div class="form-floating mb-3" *ngIf="isMedecin || isPatient">
+                  <input class="form-control" id="floatingInput" placeholder="Vero" type="email" [(ngModel)]="email" name="email" (input)="verifEmailFonction()" required><br>
+                  <label for="floatingInput">Email:</label>
+                  <p class="text-danger" *ngIf="!exactEmail">{{verifEmail}}</p>
+                  <p class="text-success" *ngIf="exactEmail"><i class="bi bi-check2-all"></i> Exact !</p>
+                </div>
+                <!-- Mot de passe  -->
+                <div class="form-floating mb-3" *ngIf="isMedecin || isPatient">
+                  <input class="form-control" placeholder="password" id="floatingInput" type="password" [(ngModel)]="password" name="password" (input)="verifPasswordFonction()" required><br>
+                  <label for="floatingInput">Mot de passe:</label>
+                  <p class="text-danger" *ngIf="!exactPassword">{{verifPassword}}</p>
+                  <p class="text-success" *ngIf="exactPassword"><i class="bi bi-check2-all"></i> Exact !</p>
+                </div>
+                <!-- Mot de passe cnfrir  -->
+                <div class="form-floating mb-3" *ngIf="isMedecin || isPatient">
+                  <input class="form-control" placeholder="password" id="floatingInput" type="password" [(ngModel)]="passwordConf" name="password" (input)="verifPasswordConfFonction()" required><br>
+                  <label for="floatingInput">confirmation mot de passe:</label>
+                  <p class="text-danger" *ngIf="!exactPasswordConf">{{verifPasswordConf}}</p>
+                  <p class="text-success" *ngIf="exactPasswordConf"><i class="bi bi-check2-all"></i> Exact !</p>
+                </div>
+                <!-- Téléphone  -->
+                <div class="form-floating mb-3" *ngIf="isMedecin || isPatient">
+                  <input class="form-control" id="floatingInput" placeholder="Vero" type="tel" [(ngModel)]="telephone" name="telephone" (input)=" verifTelephoneFonction()" required><br>
+                  <label for="floatingInput">Téléphone:</label>
+                  <!-- <p class="text-danger" *ngIf="!exactTelephone">{{verifTelephoneFonction}}</p> -->
+                  <p class="text-success" *ngIf="exactTelephone"><i class="bi bi-check2-all"></i> Exact !</p>
+                </div>
+                <!-- Genre  -->
+                <div class="form-floating mb-3" *ngIf="isMedecin || isPatient">
+                  <select class="form-control" id="floatingInput" placeholder="Genre" [(ngModel)]="genre" name="genre" required>
+                    <option value="">Genre:</option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                  </select>
+                  <!-- <label for="floatingInput">Genre:</label> -->
+                </div>
+                <!-- VILLES -->
+                <div  class="form-floating mb-3" *ngIf="isMedecin || isPatient">
+                  <select class="form-control " id="floatingInput" placeholder="" [(ngModel)]="ville" name="ville" required  >
+                    <option value=""> Sélectionnez votre <br> ville:</option>
+                    <option *ngFor="let ville of villes" [value]="ville.id">{{ ville.nom }}</option>
+                  </select>
+                </div>
+                <!-- HOSTO -->
+                <div class="form-floating mb-3" *ngIf="isMedecin ">
+                  <select class="form-control  " id="floatingInput" [(ngModel)]="hopital" name="hopital" required >
+                    <option value="">Sélectionnez un <br> hôpital</option>
+                    <option *ngFor="let hopital of hopitals" [value]="hopital.id">{{ hopital.nom }}</option>
+                  </select>
+                </div>
+                <!-- SPECIALITE -->
+                <div class="form-floating mb-3" *ngIf="isMedecin ">
+                  <select class="form-control " id="floatingInput" [(ngModel)]="secteur_activite" name="secteur_actives" required *ngIf="isMedecin">
+                    <option value="">Sélectionnez un secteur d'actives</option>
+                    <option *ngFor="let secteur_actives of secteur_activite" [value]="secteur_actives.id">{{ secteur_actives.nom }}</option>
+
+                    <!-- <option *ngFor="let secteur_actives of secteur_activess" [value]="secteur_actives.id">{{ secteur_actives.nom }}</option> -->
+                  </select>
+                </div>
+                <div class="form-floating mb-3" *ngIf="isMedecin">
+                  <div class="mb-3">
+                    <div class="block file-input">
+                       <input type="file"  (change)="getFile($event)" id="floatingInput" placeholder="image"  name="image" required>
+                    </div>
+                    <!-- <label for="formFileMultiple" class="form-label" >Profil</label>
+                    <i class="bi bi-upload"></i>
+                    <input class="form-control" type="file" id=" floatingInput"  (change)="getFile($event)"> -->
+                  </div>
+                  <!-- <input class="form-control" id="photoInput" type="file" (change)="onFileSelected($event)" accept="image/*">
+                  <label for="photoInput">Télécharger une photo:</label> -->
+                </div>
+              </div>
+              <!-- Age  -->
+              <!-- <div class="form-floating mb-3" *ngIf="isPatient">
+                <input class="form-control" id="floatingInput" placeholder="Vero" type="number" [(ngModel)]="age" name="age" required><br>
+                <label for="floatingInput">Age:</label>
+              </div> -->
+              <div *ngIf="isMedecin || isPatient" class="validationIns g-5 mb-3">
+                <div>
+                  <button class="lienInscriptionU" type="submit" (click)=" validerInscription() " >S'inscrire</button>
+                </div>
+                <div>
+                  <button class="lienInscriptionU " type="submit" (click)="annulerInscription()">Annuler</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- </div> -->
+
+<!-- connexion -->
+<div class="container titreForm texte-center" *ngIf="showConnexion" >
+  <h1 class="text-center  ms-5 mt-5" style="color: #ce0033;">Connexion</h1>
+  <div class=" mb-5">
+    <div class="carteForm">
+      <div class=" ">
+        <img src="../../assets/connexion bon.png" class="img-fluid carte" alt="...">
+      </div>
+      <div class="container">
+        <div class="card-body">
+          <div>
+            <!-- <h1 >Connexion</h1> -->
+            <form (ngSubmit)="connexion()" class=" formulaire">
+              <div class="mt-5 text-center">
+                <!-- <label class="mt-5 ms-5 ">Email:</label> -->
+                <!-- <label for="floatingInput">Email:</label> -->
+                <input class="   email" type="email"  [(ngModel)]="email" name="email" required  id="floatingInputCon" placeholder="Email:" input="verifEmailConFonction()"><br>
+                <p class="text-danger" *ngIf="!exactEmailCon">{{verifEmail}}</p>
+                <p class="text-success" *ngIf="exactEmailCon"><i class="bi bi-check2-all"></i> Exact !</p>
+              </div>
+              <div class="mt-3 text-center">
+                <!-- <label class="mt-5 ">Mot de passe:</label> -->
+                <input class=" subscription " type="password" [(ngModel)]="password" name="password" required  id="floatingInputCon" placeholder="Mot de passe:" input="verifPasswordConFonction()"><br>
+                <p class="text-danger" *ngIf="!exactPasswordCon">{{verifPasswordCon}}</p>
+                <p class="text-success" *ngIf="exactPasswordCon"><i class="bi bi-check2-all"></i> Exact !</p>
+              </div>
+              <div class="mt-3 text-center">
+                <input type="button"   class="mt-4 subscription"  (click)="connexion()" value="Se connecter">
+                <!-- <button type="submit" class="mt-4 subscription">Se connecter</button> -->
+              </div>
+            </form>
+            <div class="mt-4 text-center" (click)="afficherFrmConnexion()">
+              <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> -->
+               <button class="lienInscription btn"  data-bs-toggle="modal" data-bs-target="#exampleModal">Inscrivez-vous si vous n’avez pas de compte</button>
+              <!-- </button> -->
+            <!-- <div (click)=" afficherFrmConnexion() "> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+<!-- Pop-up pour Choisir le Rôle -->
+<!-- <div class="role-popup" *ngIf="showRolePopup">
+  <div class="role-popup-content">
+    <h2>Choisissez votre rôle :</h2> -->
+    <!-- Liens pour s'inscrire en tant que médecin ou patient -->
+    <!-- <a href="#" (click)="showRolePopup = false; roleSelected('medecin')">Inscription Médecin</a>
+    <a href="#" (click)="showRolePopup = false; roleSelected('patient')">Inscription Patient</a> -->
+    <!-- Bouton pour fermer le pop-up -->
+    <!-- <button (click)="showRolePopup = false">Fermer</button>
+  </div> -->
+<!-- </div> -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: #ce0033;">Inscription</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p> Si vous êtes patient ou médecin cliquez sur le lien correspondant à votre statut</p>
+      </div>
+      <div class="modal-footer g-5">
+        <h3 class="link" (click)="inscriptionPatient()" data-bs-dismiss="modal"> (Patient)</h3>
+        &nbsp; &nbsp; &nbsp;
+        <h3 class="link" (click)="inscriptionMedecin()" data-bs-dismiss="modal" > (Medecin)</h3>
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>

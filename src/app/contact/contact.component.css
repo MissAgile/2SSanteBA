@@ -1,0 +1,14 @@
+.contactfor{
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+.imageCont{
+  /* width: 80%; */
+}
+.imageContact{
+  width: 100%;
+}
+
+.tailleInput{
+  width: 57vh;
+}

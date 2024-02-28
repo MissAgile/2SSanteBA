@@ -1,0 +1,98 @@
+<app-sidebar-conttout></app-sidebar-conttout>
+<app-navbar-conttout></app-navbar-conttout>
+<div class="contenu">
+  <main>
+    <div class="container">
+      <!-- Liste des medecins  -->
+    <div class="mt-5 listeMedecin" *ngIf="isListeMedecin">
+      <h1 class="text-center"><u>Liste des médecins</u></h1>
+      <div class=" search-container">
+        <input type="text" class="search-input" placeholder="Recherche...">
+        <!-- <button class=""> -->
+          <i class="bi bi-search me-4" style="color: #CE0033;"></i>
+          <!-- <img src="loupe-icon.png" alt="Loupe"> -->
+        <!-- </button> -->
+      </div>
+      <div>
+        <div class="container mt-5" id="cardMedecin">
+          <div class="col" id="totalMedecin" *ngFor="let medecins of medecin">
+            <div  id="contenuTemoin"  >
+              <img src="http://127.0.0.1:8000/storage/{{ medecin.image }}" class=" mx-auto" alt="..." id="profile">
+              <div >
+                <h5 id="NomTemoins">{{ medecins.nom }}</h5>
+                <p small class="text-body-secondary">{{  medecins.secteur_activite }}</p>
+              </div>
+              <div class="claplus ">
+                <button class="btn "  id="plus" (click)="showDetailsMedecin(medecins) ">DetailsTest</button>
+                <!-- <a href="" class="btn "  id="plus" [routerLink]="['/priseConsultation',medecin.id]">En savoir plus</a> -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- affiche du planning -->
+    <div class="detailMedecin" *ngIf="isDetailsMedecin">
+      <button class="btn " id="plus" (click)="showListeMedecin()">Voir la liste des médecins</button>
+      <h1>Les consultations du médecin {{ medecin.nom }} {{ medecin.secteur_activite }}</h1>
+      <div class="cartePlanning">
+      <div class="card" *ngFor="let planning of planningMedecin">
+          <!-- <a
+             [routerLink]="['/consultationPatient', planning.id]"> -->
+              <div class="planning-card">
+                  <!-- <p>Date: {{ planning.date }}</p> -->
+                  <!-- <p>Heure de début: {{ planning.heure_debut }}</p> -->
+                  <!-- <p>Heure de fin: {{ planning.heure_fin }}</p> -->
+
+                  <!-- <tr *ngFor="let planning of planningMedecin"> -->
+                    <!-- <th scope="row"></th> -->
+                    <p>{{ planning.id }}</p>
+                    <p>{{ planning.jour }}</p>
+                    <p > Premieères Horaire: {{ planning.creneaux[1].heure_debut }} - {{ planning.creneaux[1].heure_fin }}</p>
+                    <p > Deuxième Horaire{{ planning.creneaux[0].heure_debut }} - {{ planning.creneaux[0].heure_fin }}</p>
+                  <!-- </tr> -->
+              </div>
+          <!-- </a> -->
+          <button class="btn boutonRende" [routerLink]="['/consultationPatient', planning.id]">Prendre Rendez-vous</button>
+      </div>
+    </div>
+      <!-- Bouton "Prendre Rendez-vous" -->
+      <!-- <button class="btn" (click)="prendreRendezVous()">Prendre Rendez-vous</button> -->
+  </div>
+
+    <!-- <div class="detailMedecin" *ngIf="isDetailsMedecin">
+      <button class="btn " id="plus" (click)="showListeMedecin()">Voir la liste des médecins</button>
+      <h1>Les consultations du médecin {{ medecin.nom }} {{ medecin.secteur_activite }}</h1>
+      <div class="card" *ngFor="let planning of planningMedecin">
+          <a [routerLink]="['/consultationPatient', planning.id]">
+              <div class="planning-card">
+                  <p>Date: {{ planning.date }}</p>
+                  <p>Heure de début: {{ planning.heure_debut }}</p>
+                  <p>Heure de fin: {{ planning.heure_fin }}</p>
+              </div>
+          </a>
+      </div>
+  </div> -->
+
+
+    <!-- Détails d'un medecin  -->
+    <!-- <div class="detailMedecin" *ngIf="isDetailsMedecin">
+      <button class="btn "  id="plus" (click)="showListeMedecin()">Voir la liste des medecins</button>
+      <h1>Les consultations du medecin {{medecin.nom}} {{medecin.secteur_activite}}</h1>
+      <div class="card" *ngFor="let planning of planningMedecin">
+        <div >
+          <p>Date: {{ planning.date }}</p>
+          <p>Heure de début: {{ planning.heure_debut }}</p>
+          <p>Heure de fin: {{ planning.heure_fin }}</p>
+          <!-- <!-- Ajoutez d'autres détails de planning si nécessaire -- --
+
+        </div>
+      </div>
+      <!-- <p class="card-text">
+        consultation1: dhdhh
+      </p> --
+    </div> -->
+  </div>
+</main>
+</div>

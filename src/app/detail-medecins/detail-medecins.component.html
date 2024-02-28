@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<div class="container  mx-auto " id="contenudetMed">
+  <div class="container text-center ">
+    <div class="card mb-3 mt-5 text-center" id="carteDocteur" >
+      <img src="http://127.0.0.1:8000/storage/{{ medecin.image }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 id="NomTemoins">{{ medecinChoisi.nom }}</h5>
+        <p small class="text-body-secondary">{{  medecinChoisi.secteur_activite }}</p>
+        <!-- <h5 class="card-title text-center">Dr. SAMBOU</h5>
+        <p class="card-text text-center mt-5">Médecin généraliste/Fann</p> -->
+        <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+      </div>
+    </div>
+  </div>
+  <div class="container text-center infosImportant">
+    <div>
+      <button class="bgIconne"><img src="../../assets/iconone Patients.png" alt="" class="tailleIconne"></button>
+      <p> + 500</p>
+      <p class="text-body-secondary"> Patients</p>
+    </div>
+    <div>
+     <button class="bgIconne"><img src="../../assets/experience-removebg-preview.png" alt="" class="tailleIconne"></button>
+     <p> + 500</p>
+     <p class="text-body-secondary">Expétience</p>
+    </div>
+   <div>
+     <button class="bgIconne"><img src="../../assets/iconne_message-removebg-preview.png" alt="" class="tailleIconne"></button>
+     <p> + 500</p>
+     <p class="text-body-secondary"> commentaires</p>
+   </div>
+  </div>
+  <div class="container infoPersonnel">
+      <div class="container infoPersonnelB">
+        <div class="infoPersonnelB1 ">
+          <p class="ms-5">Services Offerts :</p>
+          <ul>
+            <li>Consultations médicales en ligne et présentielle</li>
+            <li>Prévention et gestion des maladies</li>
+            <li>Suivi des conditions médicales chroniques</li>
+            <li>  Conseils en santé et bien-être</li>
+            <li>Bilan complet</li>
+          </ul>
+        </div>
+        <div class="text-center infoPersonnelB2">
+          <h5>Prix consultation : 25000 francs</h5>
+        </div>
+        <div class="infoPersonnelB3 text-center" ></div>
+          <a href="" class="btn rendez-vous" (click)="prendreRendezVous()">Prendre une rendez-vous</a>
+        </div>
+      </div>
+  </div>
+<!-- </div>
+</div> -->
+
+
+<app-footer></app-footer>

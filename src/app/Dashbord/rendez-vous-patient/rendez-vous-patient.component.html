@@ -1,0 +1,55 @@
+<app-sidebar-conttout></app-sidebar-conttout>
+<app-navbar-conttout></app-navbar-conttout>
+<div class="contenu">
+  <main>
+    <div class="container">
+      <div class="rendezVous">
+        <div class="container">
+          <h2 class="text-center">Prendre un rendez-vous</h2>
+          <div class="container rendezVousA">
+            <div class="partieFoto mt-5">
+              <div class="rectangle">
+              </div>
+              <div class="emplacementIMg">
+                <img src="../../assets/profildoctor.png" alt="" class="imgRv">
+              </div>
+            </div>
+            <div class="mt-5">
+              <div class="forRdv mt-5">
+                <div>
+                  <label>date:</label><br>
+                  <input type="date" class="posiInput" name="heureRV" [(ngModel)]="rendezVous.date">
+                </div>
+                <div>
+                  <label>Heure de rendez-vous:</label><br>
+                  <input type="time" class="posiInput" name="heureRV" [(ngModel)]="rendezVous.heureRv">
+                </div>
+                <div>
+                  <label>Type de rendez-vous</label><br>
+                  <select class="posiInput" name="typeRV" required [(ngModel)]="rendezVous.typeRendezVous">
+                    <option value="en_ligne">En ligne</option>
+                    <option value="presentiel">Présentiel</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="motifs">Choisissez un motif :</label>
+                  <select id="motifs" name="selectedMotif" [(ngModel)]="selectedMotif">
+                    <option *ngFor="let motif of motifs" [value]="motif">{{ motif }}</option>
+                  </select>
+                </div>
+
+              </div>
+              <!-- <div class="mt-5">
+                <label>Description:</label><br>
+                <textarea class="descrip" name="description" cols="60" rows="5" [(ngModel)]="rendezVous.description"></textarea>
+              </div> -->
+              <div class="infoPersonnelB3 text-center">
+                <button class="btn rendez-vous" (click)="valider()">Subscrire votre rendez-vous</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

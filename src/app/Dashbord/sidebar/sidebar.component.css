@@ -1,0 +1,188 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    /* ===== Colors ===== */
+    --primary-color: #0E4BF1;
+    --panel-color: #FFF;
+    --text-color: #000;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #4DA3FF;
+    --box2-color: #FFE6AC;
+    --box3-color: #E7D1FC;
+    --title-icon-color: #fff;
+
+    /* ====== Transition ====== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+.sidebare{
+
+ margin-top: 50px!important;
+ height: 85%;
+ /* border-right: 4px #BA0D19 solid; */
+
+}
+
+body.dark {
+    --primary-color: #3A3B3C;
+    --panel-color: #242526;
+    --text-color: #CCC;
+    --black-light-color: #CCC;
+    --border-color: #4D4C4C;
+    --toggle-color: #FFF;
+    --box1-color: #3A3B3C;
+    --box2-color: #3A3B3C;
+    --box3-color: #3A3B3C;
+    --title-icon-color: #CCC;
+}
+
+/* === Custom Scroll Bar CSS === */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0b3cc1;
+}
+
+body.dark::-webkit-scrollbar-thumb:hover,
+body.dark .activity-data::-webkit-scrollbar-thumb:hover {
+    background: #3A3B3C;
+}
+
+nav {
+    position: fixed;
+    top: -90px;
+    left: 0;
+    height: 100%;
+    margin-bottom: 200px !important;
+    width: 250px;
+    padding: 14px;
+    background-color: white;
+    border-right: 3px solid #BA0D19;
+    transition: var(--tran-05);
+    font-size: 16px;
+}
+
+nav.close {
+    width: 73px;
+}
+
+nav .logo-name {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo-image {
+    display: flex;
+    justify-content: center;
+    min-width: 115px;
+}
+
+nav .logo-image img {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-bottom: -100px;
+}
+
+nav .logo-name .logo_name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-left: 14px;
+    transition: var(--tran-05);
+}
+
+nav.close .logo_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+nav .menu-items {
+    margin-top: 60px;
+    height: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.menu-items li {
+    list-style: none;
+    font-size: 16px;
+}
+
+.menu-items li a {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    text-decoration: none;
+    position: relative;
+    color: #BA0D19;
+    font-size: 16px;
+}
+
+.nav-links li a:hover:before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+body.dark li a:hover:before {
+    background-color: var(--text-color);
+}
+
+.menu-items li a i {
+    font-size: 16px;
+    min-width: 45px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-light-color);
+}
+
+.menu-items li a .link-name {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--black-light-color);
+    transition: var(--tran-05);
+}
+
+nav.close li a .link-name {
+    opacity: 0;
+    pointer-events: none;
+}

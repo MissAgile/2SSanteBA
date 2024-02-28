@@ -1,0 +1,50 @@
+.headerContenu{
+  /* position: fixed; */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+#iconeheader{
+  color: #ffffff;
+  font-weight: 200;
+  font-size: 20px;
+}
+#contenuHeaderA{
+  display: flex;
+  justify-content: space-between;
+}
+.infosContact{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* justify-content: space-around; */
+}
+.logo{
+  /* width: 25%; */
+  height: 70px;
+  /* border-radius: 50%; */
+}
+#myButton{
+  background-color: #ce0033;
+  border-radius: 20px 0 0 0;
+  height: 9vh;
+}
+#navbarbt{
+border-bottom: 2px solid ;
+background-color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  #contenuHeaderA {
+    flex-direction: column; /* Afficher les éléments en colonne sur les écrans étroits */
+    align-items: flex-start; /* Aligner les éléments à gauche */
+  }
+
+  .infosContact {
+    grid-template-columns: 1fr; /* Afficher les éléments en une seule colonne */
+  }
+
+  #myButton {
+    width: 100%; /* Occuper toute la largeur disponible */
+    border-radius: 0; /* Ajuster la bordure du bouton */
+  }
+}

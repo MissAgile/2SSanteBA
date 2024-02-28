@@ -1,0 +1,219 @@
+<app-sidebar-conttout></app-sidebar-conttout>
+<app-navbar-conttout></app-navbar-conttout>
+<div class="contenu">
+  <main>
+    <div class="calendar">
+
+
+      <div>
+        <div class="carteRv">
+          <div class="row" *ngIf="rendezVousList.length">
+            <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let consultation of rendezVousList">
+              <div class="card imgCard" style="width: 18rem;">
+               
+                <div class="card-body">
+               
+                  <a class="text-center d-flex justify-content-center">
+                    <i class="fa-solid fa-eye me-4" style="color: #CE0033;"></i>
+                    <i class="fa-solid fa-pen me-4" style="color: #CE0033;"></i>
+                    <i class="fa-solid fa-trash-can me-4" style="color: #CE0033;"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p *ngIf="!rendezVousList.length">Aucune consultation</p>
+        </div>
+      </div>
+      <!-- <button type="button" class="btn btnAdd ajout" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Ajout du planning journalier
+         <img src="http://127.0.0.1:8000/storage/{{ article.image }}" class="card-img-top" alt="...">
+           <h5 class="card-title">{{ rendezVousList.jour }}</h5>
+                  <p class="card-text">{{ rendezVousList.heureRv }}</p>
+      </button> -->
+      <!-- <h1 class="calendar-header">Agenda</h1> -->
+      <!-- <button type="button" class="btn btnAdd planing" data-bs-dismiss="modal"  style="border-radius: 2px solid #CE0033;" data-bs-target="#exampleModal">Ajout du planning journalier</button> -->
+      <!-- <button class="btn planing" data-bs-toggle="modal" data-bs-target="#exampleModal">ajouter un planning</button> -->
+    </div>
+  </main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ajour -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter un article</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <label>Date:</label><br>
+          <input type="date" class="posiInput" name="date"  required>
+
+          <!-- <input type="tel" class="posiInput" name="telephone" required><br> --
+        </div>
+        <div class="mb-3">
+          <label for="jourSemaine" class="form-label">Jour de la semaine</label>
+          <select class="form-select" id="jourSemaine" >
+          <!-- <select class="form-select" id="jourSemaine" [(ngModel)]="jourSemaine"> --
+            <option value="lundi">Lundi</option>
+            <option value="mardi">Mardi</option>
+            <option value="mercredi">Mercredi</option>
+            <option value="jeudi">Jeudi</option>
+            <option value="vendredi">Vendredi</option>
+            <option value="samedi">Samedi</option>
+            <option value="dimanche">Dimanche</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Heure de début:</label><br>
+          <input type="time" class="posiInput" name="heure"   required>
+
+          <!-- <input type="tel" class="posiInput" name="telephone" required><br> --
+        </div>
+        <div>
+          <label>Heure de fin:</label><br>
+          <input type="time" class="posiInput" name="heure"   required>
+
+
+        </div>
+        <div class="mb-3">
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ajouter </button>
+        <!-- <button type="button" class="btn btn-primary" (click)="ajout()" data-bs-dismiss="modal">Ajouter</button> --
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Ajout du planning journalier</h5>
+
+      </div>
+      <div class="modal-body">
+        < <p>Modal body text goes here.</p> -->
+        <!-- <div>
+          <label for="dayOfWeek">Choose a day of the week:</label><br>
+          <select id="dayOfWeek" [(ngModel)]="selectedDay">
+            <option *ngFor="let day of daysOfWeek" [value]="day">{{ day }}</option>
+          </select>
+        </div> -->
+
+        <!-- <p>Selected day: {{ selectedDay }}</p> -->
+
+        <!-- <div>
+
+        </div>
+        <div></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <table class="calendar-table"> -->
+    <!-- <thead>
+      - <tr>
+            <th class="time-column">Heure</th>
+            <th class="day-column">Lundi</th>
+            <th class="day-column">Mardi</th>
+            <th class="day-column">Mercredi</th>
+            <th class="day-column">Jeudi</th>
+            <th class="day-column">Vendredi</th>
+            <th class="day-column">Samedi</th>
+            <th class="day-column">Dimanche</th>
+        </tr> --
+    </thead> -->
+    <!-- <tbody>
+        <!-- Créez des lignes pour chaque heure -->
+        <!-- 24 lignes pour les 24 heures -->
+        <!-- Remplacez les "..." par les données de l'agenda réel -->
+        <!-- Par exemple, des événements planifiés -->
+        <!-- Vous pouvez utiliser Angular pour rendre cela dynamique -->
+        <!-- Ici, nous faisons juste un exemple statique -->
+        <!-- Les heures sont en format 24h -->
+        <!-- Vous pouvez ajuster l'affichage selon vos besoins -->
+        <!-- <tr>
+            <td>09:00</td>
+            </tr>
+            <tr>
+              <td>09:30</td>
+            </tr>
+            <tr>
+              <td>10:00</td>
+            </tr>
+            <tr>
+              <td>10:30</td>
+            </tr>
+            <tr>
+              <td>11:00</td>
+            </tr>
+            <tr>
+              <td>11:30</td>
+            </tr>
+            <tr>
+              <td>12:00</td>
+            </tr>
+            <tr>
+              <td>12:30</td>
+            </tr>
+            <tr>
+              <td>13:00</td>
+            </tr>
+            <tr>
+              <td>13:30</td>
+            </tr>
+            <tr>
+              <td>14:00</td>
+            </tr>
+            <tr>
+              <td>14:30</td>
+            </tr>
+            <tr>
+              <td>15:00</td>
+            </tr>
+            <tr>
+              <td>15:30</td>
+            </tr>
+            <tr>
+              <td>16:00</td>
+            </tr>
+            <tr>
+              <td>16:30</td>
+            </tr>
+            <tr>
+              <td>17:00</td>
+            </tr>
+            <tr>
+              <td>17:30</td>
+            </tr> -->
+        <!-- </tr> -->
+        <!-- Répétez pour toutes les heures -->
+        <!-- Pensez à utiliser des boucles pour générer dynamiquement les lignes --
+    </tbody> -->
+<!-- </table> -->

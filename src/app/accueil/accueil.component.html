@@ -1,0 +1,204 @@
+<app-header></app-header>
+<div class="">
+  <div class="banier" >
+    <img src="../../assets/Baniere Accueil.png" alt="" id="banier">
+  </div>
+  <div class="container contenuAccueil">
+    <div class="container apropos">
+      <div>
+        <h2 class="text-center"> <u>Pourquoi utiliser notre application?</u></h2>
+      </div>
+      <div class="container contenuApropo">
+        <div class="">
+          <img src="../../assets/accueil apropos.png" alt="" id="sectionA">
+        </div>
+        <div class="container cartSecA">
+          <div class="">
+            <p class="ms-2 mt-2">
+              Choisir Sen rendez-vous Santé c’est prioriser votre santé.
+              Nous mettons à votre disposition des médecins de qualité.
+              Les services que nous proposons sont les suivants:
+            </p>
+            <li>Prise de rendez vous avec le médecin de votre choix</li>
+            <li> Consultation en ligne comme présentielle</li>
+            <li> Des articles sur la santé  de toutes sortes</li>
+          </div>
+          <div class="claplus ">
+            <a href="" class="btn "  id="plus">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container specialite">
+      <h2 class="text-center"> <u>Quelques solutions de soins de santé</u></h2>
+      <div class="container contenuspecialiste">
+        <div class="card border-secondary mb-3">
+          <div class=""><div class="container titreCart">
+            <div>
+              <img src="../../assets/neurology cerveau.png" alt="" id="tailleImg">
+            </div>
+            <div class="text-center">
+             <h5 class="card-title ">Neurologie</h5>
+            </div>
+          </div>
+          </div>
+          <div class="card-body text-secondary">
+            <!-- <h5 class="card-title">Secondary card title</h5> -->
+            <p class="card-text">La neurologie est la spécialité médicale clinique qui étudie l'ensemble des maladies du système nerveux et en particulier du cerveau.</p>
+          </div>
+        </div>
+        <div class="card border-secondary mb-3">
+          <div class=""><div class="container titreCart">
+            <div>
+              <img src="../../assets/coeur.png" alt="" id="tailleImg">
+            </div>
+            <div>
+             <h5 class="card-title">Cardiologie</h5>
+            </div>
+          </div>
+          </div>
+          <div class="card-body text-secondary">
+            <!-- <h5 class="card-title">Secondary card title</h5> -->
+            <p class="card-text">La cardiologie s’intéresse à l’appareil cardiovasculaire, c’est-à-dire au cœur et aux vaisseaux , à la prévention ainsi qu’au traitement des anomalies et des maladies qui l’affectent .</p>
+          </div>
+        </div>
+        <div class="card border-secondary mb-3">
+          <div class=""><div class="container titreCart">
+            <div>
+              <img src="../../assets/dents bont.png" alt="" id="tailleImg">
+            </div>
+            <div>
+             <h5 class="card-title">Odontologie</h5>
+            </div>
+          </div>
+          </div>
+          <div class="card-body text-secondary">
+            <!-- <h5 class="card-title">Secondary card title</h5> -->
+            <p class="card-text">L'odontologie, également appelée stomatologie, est la branche de la médecine qui se consacre à la santé bucco-dentaire.</p>
+          </div>
+        </div>
+        <div class="card border-secondary mb-3">
+          <div class=""><div class="container titreCart">
+            <div>
+              <img src="../../assets/opthalmology.png" alt="" id="tailleImg">
+            </div>
+            <div>
+             <h5 class="card-title">Opthalmologie</h5>
+            </div>
+          </div>
+          </div>
+          <div class="card-body text-secondary">
+            <!-- <h5 class="card-title">Secondary card title</h5> -->
+            <p class="card-text">L'ophtalmologie est  spécialisée dans l'étude de l'anatomie, de la physiologie et des problèmes de l'œil. Les ophtalmologistes traitent des affections oculaires graves.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center boutoncart">
+        <a href="#" class=" btn card-link" id="voirPlus">Voir d'autres </a>
+      </div>
+    </div>
+    <div class="container identite">
+      <div>
+        <img src="../../assets/qui nous somme.png" alt="" id="imgidentite">
+      </div>
+      <div class="">
+        <div class="text-start col-9">
+          <p>Vous êtes un professionnel de santé ?
+            Suivez plus fréquemment et plus simplement vos patients Améliorez votre confort au quotidien Rémunérez l'ensemble de votre travail
+          </p>
+        </div>
+        <div class="text-center ">
+          <a href="#" class=" btn card-link" id="voirPlus">Comment ça marche </a>
+        </div>
+        <div class="aligneText">
+          <div></div>
+          <div>
+            <p class="text-start">Vous êtes un professionnel de santé ?
+              Finis les longues heures d’attentes pour juste  pour un rendez-vous.
+              Nous sommes la solution</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container medecin">
+        <div class="text-center mt-5">
+          <h3><u>Quelques uns des spécialistes</u></h3>
+        </div>
+        <div class="container mt-5" id="cardMedecin">
+          <div class="col" *ngFor="let medecin of medecin">
+            <div id="contenuTemoin">
+              <img src="http://127.0.0.1:8000/storage/{{ medecin.image }}" class="mx-auto" alt="..." id="profile">
+              <div>
+                <h5 id="NomTemoins">{{ medecin.nom }}</h5>
+                <p small class="text-body-secondary">{{ medecin.secteur_activite }}</p>
+                <p  class="text-body-secondary"> Hopital: {{ medecin.hopital }}</p>
+                <p  class="text-body-secondary">Ville: {{ medecin.ville }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-2 mb-5">
+          <a href="#" class="btn card-link" id="voirPlus">Voir la liste des médecins</a>
+        </div>
+      </div>
+
+  <div class="container article">
+    <div class="text-center mb-3">
+      <h3>Articles</h3>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="articles" >
+      <div class="col articles">
+        <div class="card">
+          <img src="../../assets/corona.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Prévention COVID19</h5>
+            <p class="card-text">La prévention de la COVID-19 repose sur des mesures simples mais essentielles. Il est recommandé de se laver fréquemment les mains avec du savon ...
+            </p>
+          </div>
+          <div class=" posiclaplus">
+            <div></div>
+            <div class="claplus ">
+              <a href="" class="btn "  id="plus">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../../assets/choléra.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Choléra</h5>
+            <p class="card-text">Pour éviter le choléra, il est important d'avoir de l'eau propre et des installations sanitaires améliorées. Il est aussi essentiel d'adopter de bonnes habitudes d'hygiène personnelle, ....</p>
+          </div>
+          <div class="posiclaplus">
+            <div></div>
+            <div class="claplus ">
+              <a href="" class="btn "  id="plus">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../../assets/palu.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Paludisme</h5>
+            <p class="card-text">Pour éviter le paludisme, il faut utiliser des moustiquaires traitées, appliquer des répulsifs contre les moustiques, éliminer les endroits où ils se reproduisent, ......</p>
+          </div>
+          <div class="posiclaplus">
+            <div></div>
+            <div class="claplus ">
+              <a href="" class="btn "  id="plus">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+    </div>
+  </div>
+
+</div>
+</div>
+<app-footer></app-footer>

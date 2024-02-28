@@ -1,0 +1,8 @@
+.intro{
+  display: grid;
+  grid-template-columns: 45% 45%;
+  gap: 5vh;
+}
+.imgApro{
+  width: 80%;
+}

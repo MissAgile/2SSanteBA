@@ -1,0 +1,19 @@
+<app-sidebar-conttout></app-sidebar-conttout>
+<app-navbar-conttout></app-navbar-conttout>
+
+
+  <div class="contenu">
+    <main>
+      <!-- <div *ngFor="let medecinKey of Object.keys(plannings)"> -->
+        <!-- <h2>{{ medecinKey }}</h2> Affiche le nom du médecin -->
+
+        <!-- <div *ngFor="let planning of plannings[medecinKey]"> -->
+      <div *ngFor="let planning of plannings">
+        <p>Date: {{ planning.date }}</p>
+        <p>Heure de début: {{ planning.heure_debut }}</p>
+        <p>Heure de fin: {{ planning.heure_fin }}</p>
+        <!-- Ajoutez d'autres détails de planning si nécessaire -->
+      </div>
+      <!-- </div> -->
+    </main>
+  </div>

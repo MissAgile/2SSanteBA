@@ -1,0 +1,131 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 20px;
+  border: 2px solid #CE0033;
+  border-radius: 30px;
+  overflow: hidden;
+  max-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 4vh;
+}
+
+.search-input {
+  border: none;
+  padding: 8px;
+  width: 100%;
+  outline: none;
+}
+
+
+.search-button i {
+  width: 20px;
+  height: 20px;
+}
+
+#cardMedecin{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  gap: 5vh;
+  /* margin: 0 auto;/ */
+  align-items: center;
+  text-align: center;
+  margin-top: 10vh;
+}
+#cardMedecin .MedecinE{
+  text-align: justify;
+  padding: 10px;
+}
+
+#contenuTemoin{
+  padding: 5px;
+  background-color: white;
+  border-top: 1px solid #D9D9D9;
+  border-radius: 15px;
+  box-shadow:  3px 3px 3px #CE0033, -3px 3px 3px #CE0033, -0px 3px 3px #CE0033;
+}
+
+#totalMedecin{
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+  gap: 5vh;
+
+}
+#profile{
+  width: 30%;
+  height: 30%;
+  margin-top: -15%;
+  border-radius: 50%;
+}
+#plus{
+  border-radius: 25px;
+  color: #CE0033;
+  border: 2px solid #CE0033;
+  margin-top: 10vh;
+  margin-bottom: 4vh;
+}
+.boutonRende{
+  color: #ffffff;
+  background-color: #CE0033;
+  font-weight: 900;
+  border-radius: 25px;
+}
+.carteArticle{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  margin-top: 5vh;
+  gap: 5vh;
+}
+
+main{
+  width: 100%;
+  margin-left: 10%;
+}
+.contenu{
+  width: 70%;
+  margin: 2% auto;
+  /* border: 1px solid red; */
+}
+.card{
+  padding: 5vh;
+}
+.cartePlanning{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 4vh;
+  margin-bottom: 5vh;
+  padding-bottom: 5vh;
+  /* padding: 10vh; */
+}
+
+@media only screen and (max-width: 1300px) {
+  /* .sectionMedecin{
+      width: 100%;
+  } */
+}
+@media only screen  and (max-width: 1000px) {
+
+  #cardMedecin {
+      display: grid;
+      grid-template-columns: 2fr  2fr;
+      /* align-content: center; */
+      /* align-items: center; */
+      text-align: center;
+  }
+
+}
+
+@media only screen  and (max-width: 500px) {
+
+  #cardMedecin{
+      display: grid;
+      grid-template-columns: 2fr;
+
+  }
+
+
+}
+

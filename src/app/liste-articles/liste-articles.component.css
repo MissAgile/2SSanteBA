@@ -1,0 +1,59 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 20px;
+  border: 2px solid #CE0033;
+  border-radius: 30px;
+  overflow: hidden;
+  max-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 4vh;
+}
+
+.search-input {
+  border: none;
+  padding: 8px;
+  width: 100%;
+  outline: none;
+}
+
+
+.search-button i {
+  width: 20px;
+  height: 20px;
+}
+#service{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3vh;
+  padding-top: 15vh;
+  padding-bottom: 10vh;
+}
+.card {
+  height: 90vh;
+  box-shadow: 0px 0px 8px #E68513;
+  margin-bottom: 5vh;
+}
+.card-text{
+  height: 30vh;
+}
+.card-title{
+  height: 9vh;
+}
+#imagecard{
+  height: 45vh;
+}
+#plus{
+  border-radius: 25px;
+  color: #CE0033;
+  border: 2px solid #CE0033;
+  margin-top: 10vh;
+  margin-bottom: 4vh;
+}
+.carteArticle{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 4vh;
+}

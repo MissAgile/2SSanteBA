@@ -1,0 +1,55 @@
+<app-sidebar-conttout></app-sidebar-conttout>
+<app-navbar-conttout></app-navbar-conttout>
+<div class="contenu">
+  <main>
+    <table datatable [dtOptions]="dtOptions" class="row-border w-100 table hover" *ngIf="Users.length>0" >
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom complet</th>
+          <th>Role</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let itemUser of Users">
+          <td>{{ itemUser.id }}</td>
+          <td>{{ itemUser.nom }}</td>
+          <td>{{ itemUser.role }}</td>
+          <td>{{ itemUser.email }}</td>
+          <td>{{ itemUser.telephone }}</td>
+          <td> <button>Détails</button>
+            <ng-container *ngIf="itemUser.role === 'medecin'">
+    <button (click)="validerCompteMedecin(itemUser.id)">Accepter</button>
+    <button (click)="refuserCompteMedecin(itemUser.id)">Refuser</button>
+  </ng-container>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table datatable [dtOptions]="dtOptions" class="row-border w-100 table hover" *ngIf="Users.length<0" >
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom complet</th>
+          <th>Role</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Accune données disponible</td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+   

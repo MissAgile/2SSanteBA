@@ -1,0 +1,58 @@
+<app-sidebar-conttout></app-sidebar-conttout>
+<app-navbar-conttout></app-navbar-conttout>
+<div class="contenu">
+  <main>
+    <div class="container">
+    <div class="cartContenu">
+      <div class="carteInfo">
+        <div class="d-flex class ">
+
+          <p>Nombre de Patients</p>
+          <i class="bi bi-people-fill"></i>
+          <!-- <img src="../../assets/iconone_Patients-removebg-preview.png" alt=""> -->
+        </div>
+      </div>
+      <div class="carteInfo">
+        <div class="d-flex">
+
+          <p>Nombre de Patients</p>
+          <i class="bi bi-people-fill"></i>
+          <!-- <img src="../../assets/iconone_Patients-removebg-preview.png" alt=""> -->
+        </div>
+      </div>
+      <div class="carteInfo">
+        <div class="d-flex">
+
+          <p>Nombre de Patients</p>
+          <i class="bi bi-people-fill"></i>
+          <!-- <img src="../../assets/iconone_Patients-removebg-preview.png" alt=""> -->
+        </div>
+      </div>
+    </div>
+    <div class="titre">
+      <h3 class="text-white ">Article publiés récemments</h3>
+    </div>
+    <div class="carteArticle">
+      <div class="row" *ngIf="articles.length">
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let article of articles">
+          <div class="card imgCard" style="width: 18rem;">
+            <img src="http://127.0.0.1:8000/storage/{{ article.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ article.title }}</h5>
+              <p class="card-text">{{ article.description }}</p>
+              <a class="text-center d-flex justify-content-center">
+                <i class="fa-solid fa-eye me-4" style="color: #CE0033;"></i>
+                <i class="fa-solid fa-pen me-4" style="color: #CE0033;"></i>
+                <i class="fa-solid fa-trash-can me-4" style="color: #CE0033;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p *ngIf="!articles.length">Aucun article publié pour le moment</p>
+    </div>
+
+  </div>
+  </main>
+
+</div>

@@ -1,0 +1,80 @@
+.rectangle{
+  background-color: #CE0033;
+  height: 55vh;
+  border-radius: 25px;
+  width: 50vh;
+}
+.imgRv{
+  height: 55vh;
+  /* width: 100%; */
+  border-radius: 25px;
+  width: 50vh;
+}
+.emplacementIMg{
+  margin-top: -43vh;
+  margin-left: 10vh;
+
+}
+.rendezVous{
+margin-bottom: 10vh;
+}
+.rendezVousA{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 5vh;
+  /* border: 4px solid #ff2fff; */
+}
+/* .partieFoto{
+
+} */
+
+.posiInput{
+  border: 2px solid #CE0033;
+  border-radius: 20px;
+  height: 7vh;
+  gap: 4vh;
+}
+.forRdv{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:3vh;
+}
+.descrip{
+  border: 2px solid #CE0033  !important;
+
+}
+.rendez-vous{
+  border-radius: 15px;
+  border: 2px solid #CE0033;
+  color: #CE0033;
+  font-weight: bold;
+}
+ .infoPersonnelB3{
+  margin-top: 5vh;
+  /* margin-bottom: 5vh; */
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .rectangle,
+  .imgRv {
+    height: 40vh;
+    width: 70vw;
+  }
+
+  .emplacementIMg {
+    margin-top: -33vh;
+    margin-left: 5vw;
+  }
+
+  .rendezVousA {
+    grid-template-columns: 1fr ;
+  }
+
+  .forRdv{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:3vh;
+  }
+}
